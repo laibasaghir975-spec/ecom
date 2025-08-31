@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Jewelry | Exquisite Collections</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        body {
+            background-color: #fdfbf8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        button {
+            cursor: pointer;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #f8f3e9, #fdfbf8);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #b8860b;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #b8860b;
+        }
+        
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .header-icons i {
+            font-size: 20px;
+            color: #555;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .header-icons i:hover {
+            color: #b8860b;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #b8860b;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #a2790d;
+        }
+        
+        /* Categories Section */
+        .categories {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #333;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #b8860b;
+            margin: 10px auto;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .category-img {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-img i {
+            font-size: 60px;
+            color: #b8860b;
+        }
+        
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .category-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: #fdfbf8;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-img i {
+            font-size: 60px;
+            color: #b8860b;
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-content h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .product-content p {
+            color: #b8860b;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .product-content button {
+            width: 100%;
+            padding: 10px;
+            background: #b8860b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .product-content button:hover {
+            background: #a2790d;
+        }
+        
+        /* Checkout Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .modal-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .jazzcash-option {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .jazzcash-logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .jazzcash-logo span {
+            font-weight: bold;
+            font-size: 20px;
+            color: #f00;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: #b8860b;
+            margin-top: 10px;
+        }
+        
+        .footer-section p {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #ddd;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #b8860b;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons i {
+            font-size: 20px;
+            color: #ddd;
+            transition: color 0.3s;
+        }
+        
+        .social-icons i:hover {
+            color: #b8860b;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .category-grid,
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .category-grid,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Live Server Instructions */
+        .instructions {
+            background: #f8f9fa;
+            border-left: 4px solid #b8860b;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .instructions h3 {
+            color: #b8860b;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .instructions code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                Luxury Jewelry
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Rings</a></li>
+                    <li><a href="#">Necklaces</a></li>
+                    <li><a href="#">Earrings</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-shopping-cart" onclick="openCart()"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Exquisite Jewelry Collections</h1>
+            <p>Discover our unique pieces crafted with precision and passion</p>
+            <button class="btn">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Live Server Instructions -->
+    <section class="container">
+        <div class="instructions">
+            <h3>How to Open with Live Server</h3>
+            <ol>
+                <li>Save this file with an <code>.html</code> extension (e.g., <code>jewelry-store.html</code>)</li>
+                <li>Open Visual Studio Code</li>
+                <li>Install the Live Server extension if you haven't already:
+                    <ul>
+                        <li>Go to Extensions (Ctrl+Shift+X)</li>
+                        <li>Search for "Live Server"</li>
+                        <li>Click Install</li>
+                    </ul>
+                </li>
+                <li>Right-click on the HTML file in VS Code</li>
+                <li>Select "Open with Live Server"</li>
+                <li>Your website will open in your default browser at <code>http://127.0.0.1:5500/</code></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop By Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Rings</h3>
+                        <p>Elegant rings for every occasion</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Necklaces</h3>
+                        <p>Stunning necklaces to complement your style</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Earrings</h3>
+                        <p>Beautiful earrings to highlight your beauty</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Bracelets</h3>
+                        <p>Delicate bracelets for your wrist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Diamond Engagement Ring</h3>
+                        <p>$1,250.00</p>
+                        <button onclick="addToCart('Diamond Engagement Ring', 1250)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Sapphire Necklace</h3>
+                        <p>$980.00</p>
+                        <button onclick="addToCart('Sapphire Necklace', 980)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Pearl Earrings</h3>
+                        <p>$650.00</p>
+                        <button onclick="addToCart('Pearl Earrings', 650)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Gold Bracelet</h3>
+                        <p>$1,150.00</p>
+                        <button onclick="addToCart('Gold Bracelet', 1150)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title">Checkout</h2>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="jazzcash-option">
+                    <div class="jazzcash-logo">
+                        <span>JazzCash Payment</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="jazzcashNumber">JazzCash Number</label>
+                        <input type="tel" id="jazzcashNumber" placeholder="03XX-XXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transactionId">Transaction ID (if available)</label>
+                        <input type="text" id="transactionId">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Complete Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Luxury Jewelry offers exquisite handmade jewelry pieces crafted with precision and passion. We've been serving customers worldwide since 2005.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Jewelry Street, Gold City</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@luxuryjewelry.com</p>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-pinterest"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Luxury Jewelry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cart functionality
+        let cart = [];
+        
+        function addToCart(productName, price) {
+            cart.push({name: productName, price: price});
+            alert(`${productName} added to cart!`);
+        }
+        
+        function openCart() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+            } else {
+                let cartItems = "Your Cart:\n";
+                let total = 0;
+                
+                cart.forEach((item, index) => {
+                    cartItems += `${index + 1}. ${item.name} - $${item.price}\n`;
+                    total += item.price;
+                });
+                
+                cartItems += `\nTotal: $${total}`;
+                cartItems += "\n\nProceed to checkout?";
+                
+                if (confirm(cartItems)) {
+                    document.getElementById('checkoutModal').style.display = 'flex';
+                }
+            }
+        }
+        
+        function closeModal() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+        
+        // Close modal if clicked outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('checkoutModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Form submission
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Order placed successfully! You will receive a confirmation email shortly.');
+            closeModal();
+            cart = []; // Empty the cart
+        });
+    </script>
+</body>
+</html>
